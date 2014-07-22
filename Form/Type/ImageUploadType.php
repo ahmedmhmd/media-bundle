@@ -120,8 +120,8 @@ class ImageUploadType extends AbstractType
         if ($image instanceof ImageInterface && null !== $image->getId()){            
             $configs['enabled_value'] = $image->isEnabled();
         }
-        
-        $this->session->set($view->vars['id'], $configs);
+
+        $this->session->set(str_replace('__name___', '', $view->vars['id']), $configs);
         $view->vars['configs'] = $configs;
     }
     

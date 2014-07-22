@@ -178,7 +178,7 @@ ThraceMedia.imageUpload = function(collection){
             browse_button : 'thrace-image-btn-upload-' + options.id,
             multipart: true,
             multipart_params: {
-                thrace_media_id: options.id
+                thrace_media_id: options.id.replace(/\d+_/g, '')
             },
             container: 'thrace-image-upload-container-' + options.id,
             url : options.upload_url,
